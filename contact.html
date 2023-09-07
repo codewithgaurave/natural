@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{%block title %} CONTACT {%endblock title %}
+
+{%block body %} 
+<div class="container-fluid my-3">
+<IMG SRC="https://www.etc-web.com/wp-content/uploads/contact-us_banner.jpg" HEIGHT="780">
+</div>
+<div class="container">
+    <h1 class="my-4 text-center">CONTACT US</h1>
+    <form class="row g-3 card p-3 shadow-lg" method="post" action="/contact">
+      {% csrf_token %}
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="name">
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" id="email">
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="phone" name="phone" class="form-control" id="phone">
+      </div>
+      <div class="col-md-6">
+        <label for="des" class="form-label">Description</label>
+        <textarea class="form-control" name="des" id="des" rows="3"></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+{%endblock body %}
